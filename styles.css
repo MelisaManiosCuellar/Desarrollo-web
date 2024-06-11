@@ -95,14 +95,43 @@ body {
     margin: 20px 0;
 }
 
-.products__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px; /* Opcional: define el ancho máximo del carrusel */
+    margin: auto; /* Centra el carrusel */
 }
 
-.products__item {
-    text-align: center;
+.carousel__inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel__item {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center; /* Centro de texto dentro de los elementos del carrusel */
+}
+
+.carousel__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.carousel__button--prev {
+    left: 10px;
+}
+
+.carousel__button--next {
+    right: 10px;
 }
 
 .products__image {
